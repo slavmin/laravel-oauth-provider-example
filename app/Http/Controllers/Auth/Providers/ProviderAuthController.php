@@ -83,7 +83,7 @@ class ProviderAuthController extends Controller
     /**
      * Return the user or create a new one.
      */
-    public function findOrCreateUser(SocialiteUser $socialiteUser, string $oid, ?string $provider = 'esia'): User
+    public function findOrCreateUser(SocialiteUser $socialiteUser, string $oid, string $provider = 'esia'): User
     {
         $oauthUser = OauthProviders::query()
             ->where('provider_id', $oid)
@@ -115,6 +115,10 @@ class ProviderAuthController extends Controller
     {
         $contents = implode('', array_values($params));
 
-        return (new EsiaSigner(config('services.auth.esia.cert_path'), config('services.auth.esia.private_key_path')))->sign($contents);
+        return (new EsiaSigner(
+            config('services.auth.esia.cert_path'),
+            config('services.auth.esia.private_key_path'),
+            config('services.auth.esia.private_key_phrase')
+        ))->sign($contents);
     }
 }
