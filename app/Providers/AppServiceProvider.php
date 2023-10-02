@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
+use App\Services\Auth\Providers\EsiaOauthProvider;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Contracts\Factory;
-use App\Http\Services\Auth\Providers\EsiaOauthProvider;
 
 //
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 class AppServiceProvider extends ServiceProvider
 {

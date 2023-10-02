@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Services\Auth\Providers;
+namespace App\Services\Auth\Providers;
 
-use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\RequestOptions;
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User as SocialiteUser;
