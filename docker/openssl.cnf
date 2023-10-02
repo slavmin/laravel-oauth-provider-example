@@ -55,8 +55,8 @@ tsa_policy3 = 1.2.3.4.5.7
 providers = provider_sect
 ssl_conf = ssl_sect
 
-[openssl_def]
-engines = engine_section
+#[openssl_def]
+#engines = engine_section
 
 # List of providers to load
 [provider_sect]
