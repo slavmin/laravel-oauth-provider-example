@@ -29,6 +29,5 @@ class AppServiceProvider extends ServiceProvider
         $socialite = $this->app->make(Factory::class);
 
         $socialite->extend('esia', fn() => $socialite->buildProvider(EsiaOauthProvider::class, config('services.auth.esia')));
-
     }
 }
